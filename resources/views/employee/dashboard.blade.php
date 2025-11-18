@@ -1,6 +1,6 @@
 <x-layouts.emp>
     <x-slot:head>Employee Dashboard</x-slot:head>
-    <div class="p-4 lg:p-2 space-y-5">
+    <div class="p-4 lg:p-2 space-y-5" x-data="{open: false, modalAction: ''}">
         <div class="bg-white shadow grid lg:flex gap-5 lg:gap-10 p-5 rounded-xl">
             <div class="flex justify-center items-center">
                 <img class="w-32 h-32 rounded-full" src="https://static.stocktitan.net/company-logo/img-lg.png" alt="">
@@ -34,8 +34,8 @@
             <h1 class="font-semibold">Today's Attendance</h1>
             <div class="flex flex-col gap-5 justify-center lg:flex-row lg:justify-between lg:items-center">
                 <div class="space-x-2 mx-auto lg:mx-0">
-                    <button class="bg-green-500 px-5 py-3 rounded-xl text-white font-semibold">Time In</button>
-                    <button class="bg-red-500 px-5 py-3 rounded-xl text-white font-semibold">Time Out</button>
+                    <button @click="open = true; modalAction = 'Time In'" class="bg-green-500 px-5 py-3 rounded-xl text-white font-semibold">Time In</button>
+                    <button @click="open = true; modalAction = 'Time Out'" class="bg-red-500 px-5 py-3 rounded-xl text-white font-semibold">Time Out</button>
                 </div>
                 <div class="mx-auto lg:mx-0">
                     <p class="text-gray-600 text-sm">Current Time</p>
@@ -60,13 +60,13 @@
         </div>
 
 
-        
+        <x-modals.attendance-modal/>
+
         
     </div>
 </x-layouts.emp>
 
 <script>
-    // Simple real-time clock
     function updateClock() {
         const now = new Date();
         document.getElementById('clock').textContent =
