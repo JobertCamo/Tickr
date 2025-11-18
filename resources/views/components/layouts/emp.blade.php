@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 <body>
-    <div class="flex h-screen" x-data="{ sidebarOpen: false }">
+    <div class="flex min-h-screen" x-data="{ sidebarOpen: false }">
         <nav class="hidden lg:block w-[250px] bg-white shadow-lg">
             <div class="p-4 text-center text-amber-600 text-2xl font-bold border-b border-black/10">TickR</div>            
             <div class="px-3 py-4">
@@ -25,7 +25,7 @@
         </nav>
         {{-- Mobile Sidebar --}}
         <nav x-show="sidebarOpen" x-cloak transition>
-            <div @click.away="sidebarOpen = false" class="bg-white fixed h-full w-[270px] bg-white shadow-lg">
+            <div @click.away="sidebarOpen = false" class="bg-white fixed h-full w-[270px] shadow-lg">
                 <div class="p-4 text-center text-amber-600 text-2xl font-bold border-b border-black/10">TickR</div>            
                 <div class="px-3 py-4">
                     <ul class="flex flex-col gap-4">
