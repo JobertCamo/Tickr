@@ -15,9 +15,9 @@
             <div class="p-4 text-center text-amber-600 text-2xl font-bold border-b border-black/10">TickR</div>            
             <div class="px-3 py-4">
                 <ul class="flex flex-col gap-4">
-                    <li><a class="flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="">Dashboard</a></li>
-                    <li><a class="flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="">Attendance History</a></li>
-                    <li><a class="flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="">Compliance Task</a></li>
+                    <li><a class="{{ request()->is('employee/dashboard') ? 'bg-yellow-200': '' }} flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="/employee/dashboard">Dashboard</a></li>
+                    <li><a class="{{ request()->is('employee/attendance') ? 'bg-yellow-200': '' }} flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="/employee/attendance">Attendance History</a></li>
+                    <li><a class="flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="/employee/compliance">Compliance Task</a></li>
                     <li><a class="flex items-center rounded-md hover:bg-yellow-200 px-2 py-2" href="">Profile</a></li>
                     
                 </ul>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </nav>
-        <main class="flex-1 bg-slate-200">
+        <main class="flex-1 bg-slate-200 min-w-0">
             <div class="bg-white flex justify-between items-center px-10 py-5 shadow">
                 <div class="text-xl ">{{ $head ?? 't' }}</div>
                 <div class="flex items-center gap-4">

@@ -13,5 +13,7 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 Route::view('/employee/dashboard', 'employee.dashboard');
+Route::view('/employee/attendance', 'employee.attendance');
+Route::view('/employee/compliance', 'employee.compliance');
 
 require __DIR__.'/auth.php';

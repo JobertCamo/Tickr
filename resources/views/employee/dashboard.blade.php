@@ -1,5 +1,5 @@
-<x-layouts.emp>
-    <x-slot:head>Employee Dashboard</x-slot:head>
+<x-layouts.emp head="Employee Dashboard">
+    {{-- <x-slot:head>Employee Dashboard</x-slot:head> --}}
     <div class="p-4 lg:p-2 space-y-5" x-data="{open: false, modalAction: ''}">
         <div class="bg-white shadow grid lg:flex gap-5 lg:gap-10 p-5 rounded-xl">
             <div class="flex justify-center items-center">
